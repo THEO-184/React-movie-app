@@ -1,0 +1,85 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #22254b;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+		Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.item_container {
+	color: #fff;
+	width: 80vw;
+	margin: 4rem auto;
+	display: flex;
+	justify-content: center;
+	flex-wrap: nowrap;
+	align-items: flex-start;
+}
+
+.img_container {
+	width: 30%;
+	min-width: 250px;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+span.headings {
+	font-size: 1.3rem;
+	text-transform: uppercase;
+	padding-right: 8px;
+}
+
+.item_container > div {
+	margin: 2rem;
+}
+
+.about_movie {
+	width: 45%;
+	min-width: 300px;
+}
+
+.about_movie > div {
+	margin-bottom: 1rem;
+}
+
+.about_movie p {
+	margin-bottom: 1rem;
+}
+
+.item_container img {
+	width: 100%;
+	height: 450px;
+	display: block;
+	object-fit: cover;
+}
+
+.link_container {
+	background: none;
+	text-align: center;
+	margin: 2rem 0;
+}
+
+.go_home_btn {
+	color: #fff;
+	display: inline-block;
+	text-align: center;
+	padding: 5px 1rem;
+	border-radius: 3px;
+	font-size: 1.3rem;
+	text-decoration: none;
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+	transition: all 0.5s;
+	background: #11143d;
+}
+
+.go_home_btn:hover {
+	background: #24296d;
+}
+
+.producers,
+.genres {
+	padding-right: 5px;
+}
