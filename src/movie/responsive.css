@@ -53,6 +53,10 @@
 		margin: 1rem;
 	}
 
+	span.headings {
+		font-size: 1.3rem;
+	}
+
 	.spinner {
 		width: 70px;
 		height: 70px;
@@ -87,5 +91,10 @@
 	.spinner {
 		width: 30px;
 		height: 30px;
+	}
+
+	.about_movie > div {
+		margin-bottom: 1rem;
+		font-size: 1rem;
 	}
 }

@@ -27,7 +27,7 @@ body {
 }
 
 span.headings {
-	font-size: 1.3rem;
+	font-size: 1.5rem;
 	text-transform: uppercase;
 	padding-right: 8px;
 }
@@ -43,6 +43,7 @@ span.headings {
 
 .about_movie > div {
 	margin-bottom: 1rem;
+	font-size: 1.3rem;
 }
 
 .about_movie p {
