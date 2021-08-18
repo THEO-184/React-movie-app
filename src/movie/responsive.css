@@ -57,6 +57,11 @@
 		font-size: 1.3rem;
 	}
 
+	.about_movie > div {
+		margin-bottom: 1rem;
+		font-size: 1rem;
+	}
+
 	.spinner {
 		width: 70px;
 		height: 70px;
@@ -91,10 +96,5 @@
 	.spinner {
 		width: 30px;
 		height: 30px;
-	}
-
-	.about_movie > div {
-		margin-bottom: 1rem;
-		font-size: 1rem;
 	}
 }
