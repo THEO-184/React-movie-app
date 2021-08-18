@@ -32,11 +32,11 @@
 	}
 
 	form input {
-		font-size: 1rem;
+		font-size: 1.2rem;
 	}
 
 	::placeholder {
-		font-size: 1.2rem;
+		font-size: 1.3rem;
 	}
 
 	.main_container {
@@ -69,11 +69,11 @@
 	}
 
 	.main_container .title {
-		font-size: 1.3rem;
+		font-size: 1.8rem;
 	}
 
 	form input {
-		font-size: 0.7rem;
+		font-size: 1.1rem;
 	}
 
 	::placeholder {
