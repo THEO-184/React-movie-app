@@ -18,7 +18,6 @@ function Item() {
 		release_date,
 		production_companies,
 		overview,
-		homepage,
 		genres,
 	} = movie;
 	const Url = poster_path && IMGPATH + poster_path;
