@@ -3,6 +3,7 @@ import { FaSpinner } from "react-icons/fa";
 import { BiSearchAlt2 } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import defaultIMG from "../pexels-larissa-farber-7875459.jpg";
+
 const numbers = [
 	1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
 	23, 24, 25, 26, 27, 28, 29, 30,
@@ -19,6 +20,7 @@ const SEARCHAPI =
 	"https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
 
 const MovieContext = React.createContext({});
+// Movie component
 function Movie() {
 	const [movies, setMovies] = useState([]);
 	const [loading, setLoading] = useState(true);
@@ -28,28 +30,44 @@ function Movie() {
 
 	// load movies
 	const getMovies = async () => {
-		const res = await fetch(APIURL);
-		const data = await res.json();
-		if (data.results) {
-			setMovies(data.results);
-			setLoading(false);
+		try {
+			const res = await fetch(APIURL);
+			let data;
+			if (res.ok) {
+				data = await res.json();
+			}
+			if (data.results) {
+				setMovies(data.results);
+				setLoading(false);
+			}
+			throw new Error("Request failed");
+		} catch (error) {
+			console.log(error);
 		}
 	};
 
 	// get movies by Search
 	const getMovieBySearch = async (searchTerm) => {
 		setLoading(true);
-		const res = await fetch(SEARCHAPI + searchTerm);
-		const data = await res.json();
-		const results = data.results;
+		try {
+			const res = await fetch(SEARCHAPI + searchTerm);
+			let data;
+			if (res.ok) {
+				data = await res.json();
+			}
+			const results = data.results;
 
-		if (results.length > 0) {
-			setMovies(results);
-			setLoading(false);
-			setInputText("");
-		} else {
-			getMovies();
-			setInputText("");
+			if (results.length > 0) {
+				setMovies(results);
+				setLoading(false);
+				setInputText("");
+			} else {
+				getMovies();
+				setInputText("");
+			}
+			throw new Error("Request failed");
+		} catch (error) {
+			console.log(error);
 		}
 	};
 
@@ -69,7 +87,7 @@ function Movie() {
 		inputRef.current.focus();
 	}, []);
 	return (
-		<MovieContext.Provider value={getRating}>
+		<MovieContext.Provider value={{ getRating }}>
 			<div className="main_container">
 				<h1 className="title">Search Movies</h1>
 				<form onSubmit={handleSubmit}>
@@ -113,7 +131,7 @@ function Movie() {
 
 const MovieItem = (props) => {
 	const { id, poster_path, title, vote_average } = props;
-	const getRating = useContext(MovieContext);
+	const { getRating } = useContext(MovieContext);
 	const Url = poster_path && IMGPATH + poster_path;
 	return (
 		<>
